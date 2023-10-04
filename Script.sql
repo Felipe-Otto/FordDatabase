@@ -46,6 +46,16 @@ CREATE TABLE ford.Cor(
     PRIMARY KEY(CorKey) NOT ENFORCED
 );
 
+CREATE TABLE ford.Cliente(
+    ClienteKey NUMERIC NOT NULL,
+    ClienteNome STRING(100) NOT NULL,
+    ClienteDataNascimento DATE NOT NULL,
+    ClienteTelefone STRING(11) NOT NULL,
+    ClienteEmail STRING(256) NOT NULL,
+    ClienteEndereco STRING(200) NOT NULL,
+    PRIMARY KEY(ClienteKey) NOT ENFORCED   
+);
+
 CREATE TABLE ford.Documento(
     DocumentoKey NUMERIC NOT NULL,
     ClienteKey NUMERIC NOT NULL,
@@ -83,15 +93,6 @@ CREATE TABLE ford.Abastecimento(
     FOREIGN KEY(CombustivelQualidadeKey) REFERENCES ford.CombustivelQualidade(CombustivelQualidadeKey) NOT ENFORCED  
 );
 
-CREATE TABLE ford.Cliente(
-    ClienteKey NUMERIC NOT NULL,
-    ClienteNome STRING(100) NOT NULL,
-    ClienteDataNascimento DATE NOT NULL,
-    ClienteTelefone STRING(11) NOT NULL,
-    ClienteEmail STRING(256) NOT NULL,
-    ClienteEndereco STRING(200) NOT NULL,
-    PRIMARY KEY(ClienteKey) NOT ENFORCED   
-);
 
 CREATE TABLE ford.Vendedor(
     VendedorKey NUMERIC NOT NULL,
